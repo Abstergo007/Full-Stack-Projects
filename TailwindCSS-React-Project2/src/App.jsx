@@ -1,15 +1,15 @@
 import './App.css'
-import Card from './Card.jsx'
+import Card from './Components/Card.jsx'
 
 function App() {
   return (
     <>
       <h1 className="bg-green-400 text-black p-4 rounded-xl">Tailwind test!</h1>
-      <Card />
+      <Card userName = "Arkoprabho" userDesignation = "Analyst"/>
       <br />
-      <Card />
+      <Card userName = "Tanishq" userDesignation = "Consultant"/>
       <br />
-      <Card />
+      <Card username = "user3"/>
     </>
   )
 }
