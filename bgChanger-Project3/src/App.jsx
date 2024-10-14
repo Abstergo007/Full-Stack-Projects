@@ -10,14 +10,18 @@ function App() {
   return (
     <div className="w-screen h-screen" style={{backgroundColor: color}}>
       <div className="fixed flex flex-wrap justify-center bottom-12 inset-x-0 px-2 py-1">
-        {colorArr.map((colorEle, index) => (
-          colorEle !== "Black"? (
-            <div className="flex flex-wrap justify-center gap-3 shadow-l px-3 py-2 mx-2 rounded-xl text-black" style={{backgroundColor:colorEle}} onClick={() => bgColorChange(colorEle)}>{colorEle}</div>
-          ) : (
-            <div className="flex flex-wrap justify-center gap-3 shadow-l px-3 py-2 mx-2 rounded-xl text-white" style={{backgroundColor:colorEle}} onClick={() => bgColorChange(colorEle)}>{colorEle}</div>
+        <div className="flex flex-wrap justify-center gap-3 shadow-l px-3 py-2 bg-white rounded-3xl">
+          {colorArr.map((colorEle, index) => (
+            !["White", "Lavender","Yellow"].includes(colorEle)  ? (
+            <button onClick={() => bgColorChange(colorEle)} className="outline-none px-4 py-1 rounded-full text-white shadow-lg" style={{backgroundColor:colorEle}}>
+              {colorEle}
+            </button>) : (
+            <button onClick={() => bgColorChange(colorEle)} className="outline-none px-4 py-1 rounded-full text-black shadow-lg" style={{backgroundColor:colorEle}}>
+              {colorEle}
+            </button>) 
           )
-          // <Color colorChange={colorEle} bgColor = {bgColorChange} key ={index}/>
-        ))}
+          )}
+        </div>
       </div>
     </div>
   )
