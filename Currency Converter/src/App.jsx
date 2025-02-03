@@ -9,12 +9,10 @@ function App() {
   const [to, setTo] = useState("usd")
   const [convertedAmount, setConvertedAmount] = useState(0)
   const userCurrencyInformation = userCurrencyInfo(from)
-  const onAmountChange = (temp, label) => {
-    if(label == 'From') {
-      setAmount(temp)
-    }
+  const onAmountChange = (temp) => {
+    setAmount(temp)
   } 
-  const onCurrencyChange = (currency, temp, label) => {
+  const onCurrencyChange = (currency, label) => {
     if(label == 'From') {
       setFrom(currency)
     } else {
@@ -58,7 +56,7 @@ function App() {
               <div className="w-full mt-1 mb-4">
                 <InputBox label="To"
                 amount = {convertedAmount}
-                onAmountChange={onAmountChange}
+                onAmountChange={(amount) => setAmount(amount)}
                 onCurrencyChange={onCurrencyChange}
                 selectCurrency = {to}
                 amountDisable={true}
